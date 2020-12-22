@@ -2,7 +2,11 @@ const mongoose = require('mongoose');
 const config = require('config');
 const db = config.get('mongoURI');
 
-mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(db, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true
+});
 
 const connectDB = async () => {
   try {
