@@ -22,7 +22,7 @@ const Profile = ({
 
   return (
     <Fragment>
-      {profile === null || loading ? (
+      {profile === null ? (
         <Spinner />
       ) : (
         <Fragment>
