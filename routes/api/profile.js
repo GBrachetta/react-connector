@@ -69,17 +69,18 @@ router.post(
     if (bio) profileFields.bio = bio;
     if (status) profileFields.status = status;
     if (githubusername) profileFields.githubusername = githubusername;
-    if (skills)
+    if (skills) {
       profileFields.skills = skills.split(',').map((skill) => skill.trim());
+    }
 
     // Build social object
     profileFields.social = {};
 
     if (youtube) profileFields.social.youtube = youtube;
-    if (facebook) profileFields.social.facebook = facebook;
     if (twitter) profileFields.social.twitter = twitter;
-    if (instagram) profileFields.social.instagram = instagram;
+    if (facebook) profileFields.social.facebook = facebook;
     if (linkedin) profileFields.social.linkedin = linkedin;
+    if (instagram) profileFields.social.instagram = instagram;
 
     try {
       let profile = await Profile.findOne({ user: req.user.id });
@@ -335,7 +336,7 @@ router.get('/github/:username', (req, res) => {
     });
   } catch (err) {
     console.error(err.message);
-    res.statur(500).send('Server Error');
+    res.status(500).send('Server Error');
   }
 });
 

@@ -12,7 +12,7 @@ import {
   CLEAR_PROFILE
 } from './types';
 
-// load user
+// Load User
 export const loadUser = () => async (dispatch) => {
   if (localStorage.token) {
     setAuthToken(localStorage.token);
@@ -57,6 +57,7 @@ export const register = ({ name, email, password }) => async (dispatch) => {
     if (errors) {
       errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));
     }
+
     dispatch({
       type: REGISTER_FAIL
     });
@@ -88,6 +89,7 @@ export const login = (email, password) => async (dispatch) => {
     if (errors) {
       errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));
     }
+
     dispatch({
       type: LOGIN_FAIL
     });
