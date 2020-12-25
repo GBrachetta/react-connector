@@ -4,7 +4,7 @@ import Moment from 'react-moment';
 import { connect } from 'react-redux';
 import { deleteEducation } from '../../actions/profile';
 
-function Education({ education, deleteEducation }) {
+const Education = ({ education, deleteEducation }) => {
   const educations = education.map((edu) => (
     <tr key={edu._id}>
       <td>{edu.school}</td>
@@ -43,7 +43,7 @@ function Education({ education, deleteEducation }) {
       </table>
     </Fragment>
   );
-}
+};
 
 Education.propTypes = {
   education: PropTypes.array.isRequired,

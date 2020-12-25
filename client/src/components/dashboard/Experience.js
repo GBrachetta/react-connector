@@ -4,7 +4,7 @@ import Moment from 'react-moment';
 import { connect } from 'react-redux';
 import { deleteExperience } from '../../actions/profile';
 
-function Experience({ experience, deleteExperience }) {
+const Experience = ({ experience, deleteExperience }) => {
   const experiences = experience.map((exp) => (
     <tr key={exp._id}>
       <td>{exp.company}</td>
@@ -43,7 +43,7 @@ function Experience({ experience, deleteExperience }) {
       </table>
     </Fragment>
   );
-}
+};
 
 Experience.propTypes = {
   experience: PropTypes.array.isRequired,

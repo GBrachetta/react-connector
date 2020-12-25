@@ -2,13 +2,13 @@ import axios from 'axios';
 import { setAlert } from './alert';
 
 import {
-  CLEAR_PROFILE,
   GET_PROFILE,
   GET_PROFILES,
-  GET_REPOS,
   PROFILE_ERROR,
   UPDATE_PROFILE,
-  ACCOUNT_DELETED
+  CLEAR_PROFILE,
+  ACCOUNT_DELETED,
+  GET_REPOS
 } from './types';
 
 // Get current users profile
@@ -65,7 +65,6 @@ export const getProfileById = (userId) => async (dispatch) => {
 
 // Get Github repos
 export const getGithubRepos = (username) => async (dispatch) => {
-  dispatch({ type: CLEAR_PROFILE });
   try {
     const res = await axios.get(`/api/profile/github/${username}`);
 
