@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://guille:Cuperino@devconnector.y7tsb.mongodb.net/gui?retryWrites=true&w=majority",
+  "jwtSecret": "aksjaisfiashsahgdsd",
+  "githubClientId": "3d38679c4e18353b041a",
+  "githubSecret": "1cd0b262f4a978d05ef84be1bf4d0159da86cd1f"
+}
